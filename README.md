@@ -1,4 +1,4 @@
-way configuration using Debian (minimum installation possible)
+# Sway configuration using Debian (minimum possible installation)
 
 
 ## Launcher
