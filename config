@@ -1,0 +1,13 @@
+include /etc/sway/config 
+
+input "type:touchpad" {
+	tap enabled
+	dwt enabled
+	natural_scroll enabled 
+}
+
+# Confuration for launcher
+for_window [app_id="^launcher$"] floating enable, sticky enable, resize set 30 ppt 60 ppt, border pixel 10
+set $menu exec $term -a launcher -e ~/.config/sway/sway-launcher-desktop.sh
+unbindsym $mod+d
+bindsym $mod+d exec $menu
