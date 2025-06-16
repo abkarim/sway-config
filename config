@@ -9,3 +9,6 @@ input "type:touchpad" {
 
 # Confuration for launcher
 include ./launcher/config
+
+# Configuration for screen capturing 
+include ./screen_capture/config
