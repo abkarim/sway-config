@@ -1,4 +1,4 @@
-include ./default_config 
+include ./etc/default_config 
 
 # Swaybar 
 bar {
