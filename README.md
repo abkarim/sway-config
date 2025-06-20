@@ -1,5 +1,12 @@
 # Sway configuration using Debian (minimum possible installation)
 
+## Status Bar using i3Blocks
+![screenshot_Fri Jun 20 09:53:57 PM +06 2025](https://github.com/user-attachments/assets/2626a2e7-59a1-4090-a746-5afec6e16b2f)
+
+#### Requirements
+`i3blocks` packages
+
+
 ## Launcher
 Using [Sway Launcher Desktop](https://github.com/Biont/sway-launcher-desktop)
 ![Screenshot](./launcher/screenshot.png)
