@@ -6,7 +6,7 @@ bar {
 	
 	workspace_min_width 35
 
-	status_command while date +'%D %I:%M:%S %p'; do sleep 1; done 
+	status_command i3blocks -c "/home/karim/.config/sway/i3blocks.conf" 
 	status_padding 0
 
 	colors {
