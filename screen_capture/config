@@ -6,6 +6,6 @@ set $screen_capture_message_showing_duration 1
 bindsym $mod+Shift+Print exec sh -c 'grim - | tee $screen_capture_directory | wl-copy; swaynag -m $screen_capture_message & PID=$!; sleep $screen_capture_message_showing_duration; kill $PID'
 
 # Screenshot selected area 
-bindsym Print exec sh -c 'pgrep -x slurp && exit; g=$(slurp); [ -z $g ] && exit; grim -g $g - | tee $screen_capture_directory | wl-copy; swaynag -m $screen_capture_message & PID=$!; sleep $screen_capture_message_showing_duration; kill $PID'
+bindsym Print exec sh -c 'pgrep -x slurp && exit; g=$(slurp); [ -z $g ] && exit; grim -g "$g" - | tee $screen_capture_directory | wl-copy; swaynag -m $screen_capture_message & PID=$!; sleep $screen_capture_message_showing_duration; kill $PID'
 
 
