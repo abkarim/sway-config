@@ -16,4 +16,13 @@ fi
 # Parse info: format is ACTIVE:SSID:SIGNAL:BARS
 IFS=':' read -r active ssid signal  <<< "$wifi_info"
 
-echo "$ssid ($signal%)"
+# Get the Wi-Fi device name
+device=$(nmcli -t -f DEVICE,TYPE,STATE device status | grep ':wifi:connected$' | cut -d: -f1 | head -n1)
+
+# Get IPv4 address of the Wi-Fi device
+ip=$(ip -4 addr show dev "$device" | grep -oP '(?<=inet\s)\d+(\.\d+){3}' | head -n1)
+
+# Print SSID, signal, and IP
+echo "$ssid ($signal%) ($ip)"
+
+
