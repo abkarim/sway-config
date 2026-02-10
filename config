@@ -41,3 +41,6 @@ include ./launcher/config
 
 # Configuration for screen capturing 
 include ./screen_capture/config
+
+# Background 
+output "*" bg ./etc/bg/img.jpg fill
