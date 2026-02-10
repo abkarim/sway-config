@@ -1,4 +1,4 @@
-# Sway configuration using Debian (minimum possible installation)
+# Sway configuration
 
 ## How to use this 
 Before procedding, make sure you have sway installed on your system. 
@@ -50,3 +50,21 @@ use `$mod+Shift+PrintScreen` key to do this action
 
 ### Volume Status
 `pipewire wireplumber` package is required to show volume status
+
+## Open sway immediately after login through tty
+Add this to `~/.bash_profile` file
+
+```
+# Set the runtime directory if not present
+if [ -z "$XDG_RUNTIME_DIR" ]; then
+    export XDG_RUNTIME_DIR=/run/user/$(id -u)
+fi
+
+# Set the desktop name
+export XDG_CURRENT_DESKTOP=sway
+
+# Auto-start Sway on TTY1
+if [ -z "$DISPLAY" ] && [ "$(tty)" = "/dev/tty1" ]; then
+    exec dbus-run-session sway
+fi
+```
