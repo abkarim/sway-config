@@ -8,7 +8,7 @@ status=$(cat "$battery_path/status")
 capacity=""
 
 case "$status" in
-	"Charging")    icon="(+a) " ;;
+	"Charging")    icon="(+) " ;;
    	 "Discharging") icon="(-) " ;;
    	 "Full")        icon="(F) " ;;
 esac
