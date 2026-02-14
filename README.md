@@ -49,6 +49,9 @@ use `$mod+Shift+PrintScreen` key to do this action
 ### Network status 
 `network-manager` package is required to show eth and wifi status on the task bar
 
+<img width="1365" height="768" alt="screenshot_Sat Feb 14 08:10:57 AM +06 2026" src="https://github.com/user-attachments/assets/ca112e85-d99f-4431-9fe8-4072225c06b4" />
+
+
 ### Volume Status
 `pipewire wireplumber` package is required to show volume status
 
