@@ -29,7 +29,9 @@ Apply changes by pressing this key `SHIFT + MOD + C`
 
 ## Launcher
 Using [Sway Launcher Desktop](https://github.com/Biont/sway-launcher-desktop)
-![Screenshot](./launcher/screenshot.png)
+
+<img width="1920" height="1078" alt="screenshot_Sat Feb 14 10:08:24 AM +06 2026" src="https://github.com/user-attachments/assets/698626c3-cf37-447a-b2b6-81c2026de8a4" />
+
 
 #### Requirements 
 `fzf` `gawk` packages
@@ -53,7 +55,9 @@ use `$mod+Shift+PrintScreen` key to do this action
 
 
 ### Volume Status
-`pipewire wireplumber` package is required to show volume status
+`pipewire wireplumber pipewire-alsa pipewire-pulse wiremix` package is required to show volume status
+<img width="1359" height="767" alt="screenshot_Sat Feb 14 10:07:27 AM +06 2026" src="https://github.com/user-attachments/assets/ef8072d8-69e8-4113-b54f-7c952c8cd0a3" />
+
 
 ### Bluetooth Status
 `bluetui bluez bluez-utils` packages are required to show bluetooth 
