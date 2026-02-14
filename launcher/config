@@ -6,5 +6,8 @@ bindsym $mod+d exec $menu
 # For network manager 
 for_window [app_id="nmtui_float"] floating enable
 
+# For wiremix 
+for_window [app_id="wiremix_float"] floating enable
+
 # For bluetooth 
 for_window [app_id="bt_float"] floating enable, resize set 700 px 400 px, move position center
