@@ -20,7 +20,8 @@ Apply changes by pressing this key `SHIFT + MOD + C`
 
 
 ## Status Bar using i3Blocks
-![screenshot_Fri Jun 20 09:53:57 PM +06 2025](https://github.com/user-attachments/assets/2626a2e7-59a1-4090-a746-5afec6e16b2f)
+<img width="1367" height="26" alt="screenshot_Sat Feb 14 08:06:35 AM +06 2026" src="https://github.com/user-attachments/assets/165012f4-2b57-4c63-b825-01eea89a53bc" />
+
 
 #### Requirements
 `i3blocks` packages
