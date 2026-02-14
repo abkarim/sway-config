@@ -51,6 +51,13 @@ use `$mod+Shift+PrintScreen` key to do this action
 ### Volume Status
 `pipewire wireplumber` package is required to show volume status
 
+### Bluetooth Status
+`bluetui bluez bluez-utils` packages are required to show bluetooth 
+
+<img width="1367" height="26" alt="screenshot_Sat Feb 14 08:06:35 AM +06 2026" src="https://github.com/user-attachments/assets/165012f4-2b57-4c63-b825-01eea89a53bc" />
+<img width="938" height="461" alt="screenshot_Sat Feb 14 08:04:41 AM +06 2026" src="https://github.com/user-attachments/assets/1df743cb-9bde-4879-a87d-f5957ae5da0f" />
+
+
 ## Open sway immediately after login through tty
 Add this to `~/.bash_profile` file
 
