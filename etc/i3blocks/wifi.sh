@@ -25,4 +25,7 @@ ip=$(ip -4 addr show dev "$device" | grep -oP '(?<=inet\s)\d+(\.\d+){3}' | head 
 # Print SSID, signal, and IP
 echo "$ssid ($signal%) ($ip)"
 
-
+# If left-clicked, open nmtui in a new terminal window
+if [[ "$BLOCK_BUTTON" -eq 1 ]]; then
+    swaymsg exec "foot -a nmtui_float nmtui"
+fi
