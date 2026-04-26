@@ -1,16 +1,41 @@
 #!/bin/bash
 
 # Make sure wpctl is available
-if [ -z "$(which wpctl)" ]; then
-       exit 1
-fi       
+if ! command -v wpctl &> /dev/null; then
+    exit 1
+fi
 
-volume=$(wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{printf "%.0f%%\n", $2 * 100}')
-muted=$(wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{print $3}')
+# Get volume and mute status
+# Output of wpctl is usually "Volume: 0.45 [MUTED]" or just "Volume: 0.45"
+VOL_RAW=$(wpctl get-volume @DEFAULT_AUDIO_SINK@)
+VOLUME=$(echo "$VOL_RAW" | awk '{printf "%.0f", $2 * 100}')
+MUTED=$(echo "$VOL_RAW" | grep -o "\[MUTED\]")
 
-echo "$volume $muted"
+# Logic for Icons and Colors
+if [ -n "$MUTED" ]; then
+    ICON="󰝟"        # Muted Icon
+    COLOR="#ff5555" # Red
+    DISPLAY="Muted"
+else
+    DISPLAY="${VOLUME}%"
+    if [ "$VOLUME" -eq 0 ]; then
+        ICON="󰝟"    # Muted/Zero Icon
+        COLOR="#666666"
+    elif [ "$VOLUME" -lt 40 ]; then
+        ICON=""    # Volume Low
+        COLOR="#f1fa8c" # Yellowish
+    else
+        ICON=""    # Volume High
+        COLOR="#bd93f9" # Purple
+    fi
+fi
 
-# If left-clicked, open wiremix in a new terminal window
+# i3blocks Output
+echo "$ICON $DISPLAY" # Line 1: Full Text
+echo "$ICON"          # Line 2: Short Text
+echo "$COLOR"         # Line 3: Color
+
+# Handle Click
 if [[ "$BLOCK_BUTTON" -eq 1 ]]; then
     swaymsg exec "foot -a wiremix_float wiremix"
 fi

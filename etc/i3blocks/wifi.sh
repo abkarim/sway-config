@@ -9,7 +9,13 @@ fi
 # Get active Wi-Fi connection info
 wifi_info=$(nmcli -t -f ACTIVE,SSID,SIGNAL device wifi list | grep '^yes' | head -n1)
 
+# If left-clicked, open nmtui in a new terminal window
+if [[ "$BLOCK_BUTTON" -eq 1 ]]; then
+    swaymsg exec "foot -a nmtui_float nmtui"
+fi
+
 if [ -z "$wifi_info" ]; then
+		echo
 	        exit 0
 fi
 
@@ -25,7 +31,4 @@ ip=$(ip -4 addr show dev "$device" | grep -oP '(?<=inet\s)\d+(\.\d+){3}' | head 
 # Print SSID, signal, and IP
 echo "$ssid ($signal%) ($ip)"
 
-# If left-clicked, open nmtui in a new terminal window
-if [[ "$BLOCK_BUTTON" -eq 1 ]]; then
-    swaymsg exec "foot -a nmtui_float nmtui"
-fi
+

@@ -1,20 +1,20 @@
 #!/bin/bash
 
-battery_path="/sys/class/power_supply/BAT0"
+# Get battery percent and status
+PERCENT=$(cat /sys/class/power_supply/BAT0/capacity)
+STATUS=$(cat /sys/class/power_supply/BAT0/status)
 
-[ ! -d "$battery_path" ] && exit 
-
-status=$(cat "$battery_path/status")
-capacity=""
-
-case "$status" in
-	"Charging")    icon="(+) " ;;
-   	 "Discharging") icon="(-) " ;;
-   	 "Full")        icon="(F) " ;;
-esac
-
-if [ -f "$battery_path/capacity" ]; then 
-	capacity="$(cat "$battery_path/capacity")%"
+if [ "$STATUS" = "Charging" ]; then
+    ICON="󰂄"
+    COLOR="#f1fa8c" # Yellow
+elif [ "$PERCENT" -lt 20 ]; then
+    ICON=""
+    COLOR="#ff5555" # Red
+else
+    ICON=""
+    COLOR="#50fa7b" # Green
 fi
 
-echo "$icon$capacity"
+echo "$ICON $PERCENT%"
+echo "$ICON $PERCENT%"
+echo "$COLOR"
