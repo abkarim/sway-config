@@ -10,12 +10,17 @@ STATE=$(echo "show" | bluetoothctl | grep "Powered: yes" | wc -l)
 
 if [ "$STATE" -eq 0 ]; then
     echo "Off"
+
 else
     # Check for connected devices
     DEVICE=$(echo "info" | bluetoothctl | grep "Name:" | cut -d ' ' -f 2-)
     if [ -z "$DEVICE" ]; then
         echo "On"
+        echo "On"
+        echo "#4398db"
     else
         echo "$DEVICE"
+        echo "$DEVICE"
+        echo "#50fa7b"
     fi
 fi
