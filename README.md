@@ -83,3 +83,14 @@ if [ -z "$DISPLAY" ] && [ "$(tty)" = "/dev/tty1" ]; then
     exec dbus-run-session sway
 fi
 ```
+
+## Other Essential Software/Packages
+#### Thunar file manager
+```
+sudo pacman -S thunar
+```
+
+#### Okular Document viewer
+```
+sudo pacman -S okular
+```
