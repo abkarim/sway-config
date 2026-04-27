@@ -12,7 +12,7 @@ mkdir -p ~/.config/sway
 ### Clone this repo content inside the folder
 Navigate into the config folder and use this command to clone this repo inside the folder. 
 ```
-git clone https://github.com/abkarim/sway-config.git .
+git clone https://github.com/abkarim/arch-sway.git .
 ```
 
 ### Apply changes 
