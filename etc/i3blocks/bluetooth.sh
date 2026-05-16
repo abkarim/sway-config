@@ -19,8 +19,8 @@ else
         echo 
         echo "#4398db"
     else
-        echo "$DEVICE"
-        echo "$DEVICE"
+        echo " $DEVICE"
+        echo " $DEVICE"
         echo "#50fa7b"
     fi
 fi
